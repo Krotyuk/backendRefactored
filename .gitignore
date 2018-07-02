@@ -5,3 +5,8 @@
 **/**.log
 **/.gradle
 **/backend.iml
+
+# frontend
+**/node_modules
+**/yarn-error.log
+**/npm-error.log
