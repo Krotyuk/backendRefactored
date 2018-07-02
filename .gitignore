@@ -4,3 +4,7 @@
 */build/
 */out/
 */*.log
+# frontend
+*/node_modules
+*/yarn-error.log
+*/npm-error.log
