@@ -14,6 +14,7 @@ const Book = ({ book, toggleBookAvailable, deleteBook }) => (
     <div className="book_name">{locale.name} {book.name}</div>
     <div className="book_author">{locale.author} {book.author}</div>
     <div className="book_genres">{locale.genre} {book.genre.join(', ')}</div>
+    <div className="book_pages">{locale.pages} {book.pages}</div>
     <div className="book_available" onClick={toggleBookAvailable} data-book-id={book.id}>
       {book.isAvailable ? locale.hold : locale.unhold}
     </div>

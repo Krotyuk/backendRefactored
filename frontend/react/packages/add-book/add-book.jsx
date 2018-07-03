@@ -11,7 +11,7 @@ const AddBook = ({ addBook }) => {
     event.preventDefault();
 
     if (!elements.name.value.trim() || !elements.author.value.trim()
-    || !elements.genre.value.trim()) {
+    || !elements.genre.value.trim() || !elements.pages.value.trim()) {
       return;
     }
 
@@ -19,17 +19,19 @@ const AddBook = ({ addBook }) => {
       name: elements.name.value.trim(),
       author: elements.author.value.trim(),
       genre: elements.genre.value.split(',').map((item) => item.trim()),
+      pages: Number(elements.pages.value),
     });
 
     elements.name.value = '';
     elements.author.value = '';
     elements.genre.value = '';
+    elements.pages.value = '';
   };
 
   return (
     <form className="add-book" onSubmit={onSubmit}>
       {
-        ['name', 'author', 'genre'].map((key) => (
+        ['name', 'author', 'genre', 'pages'].map((key) => (
           <label className="add-book_field" key={key}>
             <div className="add-book_field_label">{locale[key]}</div>
             <input

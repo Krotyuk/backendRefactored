@@ -12,16 +12,7 @@ class Books extends React.Component {
     super(props);
 
     this.state = {
-      books: [
-        // {
-        //   name: 'Название',
-        //   author: 'Автор',
-        //   id: '000001',
-        //   genre: ['фантастика', 'ужасы'],
-        //   pages: 123,
-        //   isAvailable: true,
-        // },
-      ],
+      books: [],
       isLoading: true,
       activeFilter: visibilityFilters.ALL,
       message: null,
@@ -36,7 +27,6 @@ class Books extends React.Component {
   componentDidMount() {
     createRequest('fetchBooks').then((response) => {
       this.setState({ books: response.data || [], isLoading: false, message: response.message });
-      // this.setState({ isLoading: false, message: response.message });
     });
   }
 
@@ -60,7 +50,7 @@ class Books extends React.Component {
     let book = books.find((item) => item.id === id);
 
     this.setState({ isLoading: true });
-    createRequest('updateBook', { id }, { isCompleted: !book.isCompleted }).then((response) => {
+    createRequest('updateBook', { id }, { isAvailable: !book.isAvailable }).then((response) => {
       if (response.status === responseStatuses.OK) {
         book = Object.assign(book, response.data);
         this.setState({ books, isLoading: false, message: response.message });
@@ -95,6 +85,8 @@ class Books extends React.Component {
 
   render() {
     const { activeFilter, books, isLoading, message } = this.state;
+
+    console.log(this.state);
 
     const filteredBooks = books.filter((book) => {
       switch (activeFilter) {

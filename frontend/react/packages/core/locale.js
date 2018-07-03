@@ -17,6 +17,7 @@ module.exports = {
     name: 'Имя:',
     author: 'Автор:',
     genre: 'Жанр:',
+    pages: 'Страницы:',
     hold: 'Забронировать',
     unhold: 'Разбронировать',
   },
@@ -25,6 +26,7 @@ module.exports = {
     name: 'Имя:',
     author: 'Автор:',
     genre: 'Жанр:',
+    pages: 'Страницы:',
     buttonLabel: 'Добавить книгу',
   },
 };

@@ -63,6 +63,10 @@ module.exports = (requestName, queryOptions, body) => {
       body: body ? JSON.stringify(body) : undefined,
     })
       .then((response) => response.json())
+      .then((response) => {
+        resolve(response);
+        return response;
+      })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error(err);
