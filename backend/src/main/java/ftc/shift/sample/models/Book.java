@@ -3,6 +3,7 @@ package ftc.shift.sample.models;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Lombok (https://projectlombok.org/) инструмент, позволяющий не писать геттеры-сеттеры, конструкторы и тд. Они генерируются автоматом.
@@ -13,6 +14,7 @@ import java.io.Serializable;
 
 @NoArgsConstructor
 @Data
+@AllArgsConstructor
 public class Book implements Serializable{
 
     private String id;
@@ -20,5 +22,6 @@ public class Book implements Serializable{
     private String author;
     private Integer pages;
     private Boolean isAvailable;
+    private List<String> genre;
 
 }
