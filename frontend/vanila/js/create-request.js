@@ -49,6 +49,7 @@ module.exports = (path, method, queryOptions, body) => {
       body: body ? JSON.stringify(body) : undefined,
     })
       .then((response) => response.json())
+      .then((response) => resolve(response))
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.error(err);
