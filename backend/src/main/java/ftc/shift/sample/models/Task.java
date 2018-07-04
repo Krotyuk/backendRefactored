@@ -1,6 +1,8 @@
 package ftc.shift.sample.models;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
@@ -15,13 +17,16 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class Book implements Serializable{
+public class Task implements Serializable{
 
-    private String id;
-    private String name;
-    private String author;
-    private Integer pages;
-    private Boolean isAvailable;
-    private List<String> genre;
+    private String taskId;
+    private String userId; //Демо. Потом будет получаться из другого источника
+    private String title;
+    private String description;
+    private String date;
+    private String status;
+    private String selectedApplyId;
+    //private Integer pages;
+    //private Boolean isAvailable;
 
 }
